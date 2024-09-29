@@ -4,14 +4,6 @@ test("home page", () => {
     render(<Home />)
     expect(screen.getByText("Home component")).toBeInTheDocument()
 })
-test("home page1", () => {
-    render(<Home />)
-    expect(screen.getByText("Home component")).toBeInTheDocument()
-})
-test("home page2", () => {
-    render(<Home />)
-    expect(screen.getByText("Home component")).toBeInTheDocument()
-})
 
 
 // Before and after hooks in jest
@@ -24,4 +16,14 @@ beforeAll(() => {
 
 afterEach(() => {
     console.log("Before each test")
+})
+
+
+// what is snapshot testing
+// when this is usefull
+// how to update snapshots
+
+test("snapshots for home screen", () => {
+    const container = render(<Home />)
+    expect(container).toMatchSnapshot()
 })
