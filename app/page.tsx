@@ -9,13 +9,19 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-center">
-      get multiple role
+      get all by role
       <button>click 1</button>
-      <button>click 2</button>
-      <label htmlFor="input1">username</label>
-      <input type="text" id="input1" />
-      <input type="text" />
-      <div role="div">div semantic tag</div>
+      <button>click 1</button>
+      <button>click 1</button>
+      <button>click 1</button>
+
+      <option>
+        <select>1</select>
+        <select>2</select>
+        <select>3</select>
+        <select>4</select>
+      </option>
+
     </main>
   );
 }

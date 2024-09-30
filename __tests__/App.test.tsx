@@ -131,12 +131,28 @@ test("class component testing", () => {
 //  custom role
 
 
-test("getbyRole", () => {
+// test("getbyRole", () => {
+//     render(<Home />)
+//     const btn1 = screen.getByRole("button", { name: "click 1" })
+//     const input1 = screen.getByRole("textbox", { name: "username" })
+//     const div = screen.getByRole("div")
+//     expect(btn1).toBeInTheDocument()
+//     expect(input1).toBeInTheDocument()
+//     expect(div).toBeInTheDocument()
+// })
+
+// getallbyrole
+
+test("get all by role", () => {
     render(<Home />)
-    const btn1 = screen.getByRole("button", { name: "click 1" })
-    const input1 = screen.getByRole("textbox", { name: "username" })
-    const div = screen.getByRole("div")
-    expect(btn1).toBeInTheDocument()
-    expect(input1).toBeInTheDocument()
-    expect(div).toBeInTheDocument()
+    const buttons = screen.getAllByRole("button")
+    const options = screen.getAllByRole("option")
+    for (let i = 0; i < buttons.length; i++) {
+        expect(buttons[i]).toBeInTheDocument()
+    }
+
+    for (let i = 0; i < options.length; i++) {
+        expect(options[i]).toBeInTheDocument()
+    }
+
 })
