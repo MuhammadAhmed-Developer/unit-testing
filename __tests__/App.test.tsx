@@ -1,11 +1,12 @@
 import Home from "@/app/page"
 import Users from "@/components/User"
-import { screen, render } from "@testing-library/react"
+import { handleOtherMethod } from "@/utils/helper"
+import { screen, render, fireEvent } from "@testing-library/react"
 import renderer from "react-test-renderer"
-test("home page", () => {
-    render(<Home />)
-    expect(screen.getByText("Home component")).toBeInTheDocument()
-})
+// test("home page", () => {
+//     render(<Home />)
+//     expect(screen.getByText("Home component")).toBeInTheDocument()
+// })
 
 
 // Before and after hooks in jest
@@ -63,4 +64,23 @@ test("class component testing", () => {
     const componentData: any = renderer.create(<Users />).getInstance()
     // console.log('componentData', componentData)
     expect(componentData.getUserList()).toMatch("user list")
+})
+
+
+// Functional component method testing
+//  1-Discuss possible case for method testing
+//  2- Define the button, click event and method
+//  3- Test method with event
+//  4- Test method without event 
+
+
+test("method testing case 1", () => {
+    render(<Home />)
+    const btn = screen.getByTestId("btn1")
+    fireEvent.click(btn)
+    expect(screen.getByText("Hello")).toBeInTheDocument();
+})
+
+test("method 2", () => {
+    expect(handleOtherMethod()).toMatch("hi")
 })

@@ -1,16 +1,25 @@
+"use client"
 import HomeComp from "@/components/Home";
 import InputComponent from "@/components/Input";
 import Users from "@/components/User";
+import { handleOtherMethod } from "@/utils/helper";
+import { useState } from "react";
 
 export default function Home() {
+  const [data, setData] = useState("")
+
+  const handleData = () => {
+    setData("Hello")
+  }
+
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Users />
-      <HomeComp />
-      This is main screen
-      {/* <img src="/favicon.ico" alt="logo" title="logo" /> */}
-      <input type="text" placeholder="input testing" name="name" readOnly value={"Ahmed"} />
-      <InputComponent />
+    <main className="">
+      Functional component testing
+      <button onClick={handleData} data-testid="btn1">update</button>
+      <button onClick={handleOtherMethod} >handleOtherMethod</button>
+      <h2>{data}</h2>
     </main>
   );
 }
