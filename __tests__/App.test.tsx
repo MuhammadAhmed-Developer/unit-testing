@@ -74,13 +74,58 @@ test("class component testing", () => {
 //  4- Test method without event 
 
 
-test("method testing case 1", () => {
+// test("method testing case 1", () => {
+//     render(<Home />)
+//     const btn = screen.getByTestId("btn1")
+//     fireEvent.click(btn)
+//     expect(screen.getByText("Hello")).toBeInTheDocument();
+// })
+
+// test("method 2", () => {
+//     expect(handleOtherMethod()).toMatch("hi")
+// })
+
+
+// RTL Query (react testing library)
+//  1- what is RTL Query
+//  2- Why need RTL Query?
+//  3- Steps in testing UI
+//  4- How RTL Query finds elements?
+//  5- Type of RTL Queries.
+
+//  Find Single Element
+//    getBy
+//    queryBy
+//    findBy
+// Find Multiple elements
+//    getAllBy
+//    queryAllBy
+//     findAllBy
+
+
+//  getByRole Query
+
+// what is role in getByRole?
+// What is semantic elements?
+//  Button , heading tags and table are semantic element
+//  div and span are not semantic elements
+// Test textBox with getByRole
+//  text box present
+//  textbox value
+//  text box disabled or not
+
+
+test("get by role", () => {
     render(<Home />)
-    const btn = screen.getByTestId("btn1")
-    fireEvent.click(btn)
-    expect(screen.getByText("Hello")).toBeInTheDocument();
+    const inputField = screen.getByRole("textbox")
+    expect(inputField).toBeInTheDocument()
+    expect(inputField).toHaveValue("hi")
+    expect(inputField).toBeDisabled()
 })
 
-test("method 2", () => {
-    expect(handleOtherMethod()).toMatch("hi")
-})
+
+// MUltiple element with role custom role
+//  multiple element with the same role issue
+//  multiple buttons with role
+//  multiple input box with role
+//  custom role
