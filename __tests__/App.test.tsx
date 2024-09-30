@@ -115,13 +115,13 @@ test("class component testing", () => {
 //  text box disabled or not
 
 
-test("get by role", () => {
-    render(<Home />)
-    const inputField = screen.getByRole("textbox")
-    expect(inputField).toBeInTheDocument()
-    expect(inputField).toHaveValue("hi")
-    expect(inputField).toBeDisabled()
-})
+// test("get by role", () => {
+//     render(<Home />)
+//     const inputField = screen.getByRole("textbox")
+//     expect(inputField).toBeInTheDocument()
+//     expect(inputField).toHaveValue("hi")
+//     expect(inputField).toBeDisabled()
+// })
 
 
 // MUltiple element with role custom role
@@ -129,3 +129,14 @@ test("get by role", () => {
 //  multiple buttons with role
 //  multiple input box with role
 //  custom role
+
+
+test("getbyRole", () => {
+    render(<Home />)
+    const btn1 = screen.getByRole("button", { name: "click 1" })
+    const input1 = screen.getByRole("textbox", { name: "username" })
+    const div = screen.getByRole("div")
+    expect(btn1).toBeInTheDocument()
+    expect(input1).toBeInTheDocument()
+    expect(div).toBeInTheDocument()
+})

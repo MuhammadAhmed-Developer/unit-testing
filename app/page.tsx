@@ -9,8 +9,13 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-center">
-      getByRole
-      <input type="text" defaultValue={"hi"} disabled />
+      get multiple role
+      <button>click 1</button>
+      <button>click 2</button>
+      <label htmlFor="input1">username</label>
+      <input type="text" id="input1" />
+      <input type="text" />
+      <div role="div">div semantic tag</div>
     </main>
   );
 }
